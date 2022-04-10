@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -130,6 +131,79 @@ namespace Procesor8086
             {
                 box.Background = Brushes.PowderBlue;
             }
+        }
+
+        private void CheckIsHex(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !int.TryParse(e.Text, NumberStyles.HexNumber, CultureInfo.CurrentCulture, out _);
+        }
+
+        private void swap(TextBox a, TextBox b)
+        {
+            string temp = a.Text;
+
+            a.Text = b.Text;
+            b.Text = temp;
+        }
+
+        private void XCHG_AX_BX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(AX_input, BX_input);
+        }
+
+        private void XCHG_AX_CX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(AX_input, CX_input);
+        }
+
+        private void XCHG_AX_DX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(AX_input, DX_input);
+        }
+
+        private void XCHG_BX_AX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(BX_input, AX_input);
+        }
+
+        private void XCHG_BX_CX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(BX_input, CX_input);
+        }
+
+        private void XCHG_BX_DX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(BX_input, DX_input);
+        }
+
+        private void XCHG_CX_AX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(CX_input, AX_input);
+        }
+
+        private void XCHG_CX_BX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(CX_input, BX_input);
+        }
+
+        private void XCHG_CX_DX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(CX_input, DX_input);
+        }
+
+        private void XCHG_DX_AX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(DX_input, AX_input);
+        }
+
+        private void XCHG_DX_BX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(DX_input, BX_input);
+        }
+
+        private void XCHG_DX_CX_Click(object sender, RoutedEventArgs e)
+        {
+            swap(DX_input, CX_input);
         }
     }
 }

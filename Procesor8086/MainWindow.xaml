@@ -22,15 +22,15 @@
                 <TranslateTransform />
             </TransformGroup>
         </Grid.RenderTransform>
-        <TextBox x:Name="BX_input" HorizontalAlignment="Left" Height="26" Margin="95,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" />
-        <TextBox x:Name="AX_input" HorizontalAlignment="Left" Height="26" Margin="95,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" />
-        <TextBox x:Name="CX_input" HorizontalAlignment="Left" Height="26" Margin="95,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" />
-        <TextBox x:Name="DX_input" HorizontalAlignment="Left" Height="26" Margin="95,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" />
+        <TextBox x:Name="BX_input" HorizontalAlignment="Left" Height="26" Margin="95,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="AX_input" HorizontalAlignment="Left" Height="26" Margin="95,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="CX_input" HorizontalAlignment="Left" Height="26" Margin="95,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="DX_input" HorizontalAlignment="Left" Height="26" Margin="95,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,59,0,0" Text="AX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,96,0,0" Text="BX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,135,0,0" Text="CX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,173,0,0" Text="DX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
-        <Button x:Name="MOV_AX_BX" Content="MOV AX, BX" HorizontalAlignment="Left" Height="22" Margin="13,0,0,348" VerticalAlignment="Bottom" Width="75" Click="MOV_AX_BX_Click" />
+        <Button x:Name="MOV_AX_BX" Content="MOV AX, BX" HorizontalAlignment="Left" Height="22" Margin="12,0,0,345" VerticalAlignment="Bottom" Width="75" Click="MOV_AX_BX_Click" />
         <Button x:Name="MOV_AX_CX" Content="MOV AX, CX" HorizontalAlignment="Left" Height="22" Margin="12,269,0,0" VerticalAlignment="Top" Width="75" Click="MOV_AX_CX_Click" />
         <Button x:Name="MOV_AX_DX" Content="MOV AX, DX" HorizontalAlignment="Left" Height="22" Margin="12,298,0,0" VerticalAlignment="Top" Width="75" Click="MOV_AX_DX_Click" />
         <Button x:Name="MOV_BX_AX" Content="MOV BX, AX" HorizontalAlignment="Left" Height="22" Margin="12,325,0,0" VerticalAlignment="Top" Width="75" Click="MOV_BX_AX_Click" />
@@ -44,5 +44,17 @@
         <Button x:Name="RESET_register" Content="Reset" HorizontalAlignment="Left" Height="22" Margin="21,10,0,0" VerticalAlignment="Top" Width="75" Click="ResetRegister" />
         <Button x:Name="Random_register" Content="Random" HorizontalAlignment="Left" Height="22" Margin="115,11,0,0" VerticalAlignment="Top" Width="75" Click="RandomRegister" />
         <Button x:Name="MOV_CX_BX_Copy" Content="MOV CX, BX" HorizontalAlignment="Left" Height="22" Margin="12,461,0,0" VerticalAlignment="Top" Width="75" Click="MOV_CX_DX_Click" />
+        <Button x:Name="XCHG_AX_BX" Content="XCHG AX, BX" HorizontalAlignment="Left" Height="22" Margin="109,0,0,345" VerticalAlignment="Bottom" Width="75" Click="XCHG_AX_BX_Click" />
+        <Button x:Name="XCHG_AX_CX" Content="XCHG AX, CX" HorizontalAlignment="Left" Height="22" Margin="110,0,0,314" VerticalAlignment="Bottom" Width="75" Click="XCHG_AX_CX_Click" />
+        <Button x:Name="XCHG_AX_DX" Content="XCHG AX, DX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,286" VerticalAlignment="Bottom" Width="75" Click="XCHG_AX_DX_Click" />
+        <Button x:Name="XCHG_BX_AX" Content="XCHG BX, AX" HorizontalAlignment="Left" Height="22" Margin="110,0,0,258" VerticalAlignment="Bottom" Width="75" Click="XCHG_BX_AX_Click" />
+        <Button x:Name="XCHG_BX_CX" Content="XCHG BX, CX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,227" VerticalAlignment="Bottom" Width="75" Click="XCHG_BX_CX_Click" />
+        <Button x:Name="XCHG_BX_DX" Content="XCHG BX, DX" HorizontalAlignment="Left" Height="22" Margin="113,0,0,198" VerticalAlignment="Bottom" Width="75" Click="XCHG_BX_DX_Click" />
+        <Button x:Name="XCHG_CX_AX" Content="XCHG CX, AX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,165" VerticalAlignment="Bottom" Width="75" Click="XCHG_CX_AX_Click" />
+        <Button x:Name="XCHG_CX_BX" Content="XCHG CX, BX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,133" VerticalAlignment="Bottom" Width="75" Click="XCHG_CX_BX_Click" />
+        <Button x:Name="XCHG_CX_DX" Content="XCHG CX, DX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,105" VerticalAlignment="Bottom" Width="75" Click="XCHG_CX_DX_Click" />
+        <Button x:Name="XCHG_DX_AX" Content="XCHG DX, AX" HorizontalAlignment="Left" Height="22" Margin="113,0,0,78" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_AX_Click" />
+        <Button x:Name="XCHG_DX_BX" Content="XCHG DX, BX" HorizontalAlignment="Left" Height="22" Margin="113,0,0,52" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_BX_Click" />
+        <Button x:Name="XCHG_DX_CX" Content="XCHG DX, CX" HorizontalAlignment="Left" Height="22" Margin="112,0,0,21" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_CX_Click" />
     </Grid>
 </Window>
