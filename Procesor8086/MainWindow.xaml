@@ -22,10 +22,10 @@
                 <TranslateTransform />
             </TransformGroup>
         </Grid.RenderTransform>
-        <TextBox x:Name="BX_input" HorizontalAlignment="Left" Height="26" Margin="95,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBox x:Name="AX_input" HorizontalAlignment="Left" Height="26" Margin="95,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBox x:Name="CX_input" HorizontalAlignment="Left" Height="26" Margin="95,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBox x:Name="DX_input" HorizontalAlignment="Left" Height="26" Margin="95,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="BX_input_reg" HorizontalAlignment="Left" Height="26" Margin="56,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="AX_input_reg" HorizontalAlignment="Left" Height="26" Margin="54,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="CX_input_reg" HorizontalAlignment="Left" Height="26" Margin="55,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="DX_input_reg" HorizontalAlignment="Left" Height="26" Margin="55,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,59,0,0" Text="AX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,96,0,0" Text="BX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,135,0,0" Text="CX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
@@ -56,5 +56,11 @@
         <Button x:Name="XCHG_DX_AX" Content="XCHG DX, AX" HorizontalAlignment="Left" Height="22" Margin="113,0,0,78" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_AX_Click" />
         <Button x:Name="XCHG_DX_BX" Content="XCHG DX, BX" HorizontalAlignment="Left" Height="22" Margin="113,0,0,52" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_BX_Click" />
         <Button x:Name="XCHG_DX_CX" Content="XCHG DX, CX" HorizontalAlignment="Left" Height="22" Margin="112,0,0,21" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_CX_Click" />
+        <RadioButton x:Name="mem_reg" Content="Z rejestru do pamęci" HorizontalAlignment="Left" Height="17" Margin="222,9,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" />
+        <RadioButton x:Name="reg_mem" Content="Z pamięci do rejestru" HorizontalAlignment="Left" Height="17" Margin="222,30,0,0" VerticalAlignment="Top" Width="153" />
+        <TextBox x:Name="AX_input_mem" HorizontalAlignment="Left" Height="26" Margin="185,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="BX_input_mem" HorizontalAlignment="Left" Height="26" Margin="187,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="CX_input_mem" HorizontalAlignment="Left" Height="26" Margin="189,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBox x:Name="DX_input_mem" HorizontalAlignment="Left" Height="26" Margin="188,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
     </Grid>
 </Window>

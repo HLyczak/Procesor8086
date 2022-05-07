@@ -32,15 +32,25 @@ namespace Procesor8086
 
         private void ResetRegister(object sender, RoutedEventArgs e)
         {
-            this.AX_input.Clear();
-            this.BX_input.Clear();
-            this.CX_input.Clear();
-            this.DX_input.Clear();
+            this.AX_input_reg.Clear();
+            this.BX_input_reg.Clear();
+            this.CX_input_reg.Clear();
+            this.DX_input_reg.Clear();
 
-            this.AX_input.Background = Brushes.White;
-            this.BX_input.Background = Brushes.White;
-            this.CX_input.Background = Brushes.White;
-            this.DX_input.Background = Brushes.White;
+            this.AX_input_mem.Clear();
+            this.BX_input_mem.Clear();
+            this.CX_input_mem.Clear();
+            this.DX_input_mem.Clear();
+
+            this.AX_input_reg.Background = Brushes.White;
+            this.BX_input_reg.Background = Brushes.White;
+            this.CX_input_reg.Background = Brushes.White;
+            this.DX_input_reg.Background = Brushes.White;
+
+            this.AX_input_mem.Background = Brushes.White;
+            this.BX_input_mem.Background = Brushes.White;
+            this.CX_input_mem.Background = Brushes.White;
+            this.DX_input_mem.Background = Brushes.White;
         }
 
         private string GetRandom()
@@ -54,78 +64,124 @@ namespace Procesor8086
 
         private void RandomRegister(object sender, RoutedEventArgs e)
         {
-            this.AX_input.Text = GetRandom();
-            this.BX_input.Text = GetRandom();
-            this.CX_input.Text = GetRandom();
-            this.DX_input.Text = GetRandom();
+            this.AX_input_reg.Text = GetRandom();
+            this.BX_input_reg.Text = GetRandom();
+            this.CX_input_reg.Text = GetRandom();
+            this.DX_input_reg.Text = GetRandom();
+
+            this.AX_input_mem.Text = GetRandom();
+            this.BX_input_mem.Text = GetRandom();
+            this.CX_input_mem.Text = GetRandom();
+            this.DX_input_mem.Text = GetRandom();
         }
 
         private void MOV_AX_BX_Click(object sender, RoutedEventArgs e)
         {
-            this.AX_input.Text = this.BX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.AX_input_reg.Text = this.BX_input_mem.Text;
+            else
+                this.AX_input_mem.Text = this.BX_input_reg.Text;
         }
 
         private void MOV_AX_CX_Click(object sender, RoutedEventArgs e)
         {
-            this.AX_input.Text = this.CX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.AX_input_reg.Text = this.CX_input_mem.Text;
+            else
+                this.AX_input_mem.Text = this.CX_input_reg.Text;
         }
 
         private void MOV_AX_DX_Click(object sender, RoutedEventArgs e)
         {
-            this.AX_input.Text = this.DX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.AX_input_reg.Text = this.DX_input_mem.Text;
+            else
+                this.AX_input_mem.Text = this.DX_input_reg.Text;
         }
 
         private void MOV_BX_AX_Click(object sender, RoutedEventArgs e)
         {
-            this.BX_input.Text = this.AX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.BX_input_reg.Text = this.AX_input_mem.Text;
+            else
+                this.BX_input_mem.Text = this.AX_input_reg.Text;
         }
 
         private void MOV_BX_CX_Click(object sender, RoutedEventArgs e)
         {
-            this.BX_input.Text = this.CX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.BX_input_reg.Text = this.CX_input_mem.Text;
+            else
+                this.BX_input_mem.Text = this.CX_input_reg.Text;
         }
 
         private void MOV_BX_DX_Click(object sender, RoutedEventArgs e)
         {
-            this.BX_input.Text = this.DX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.BX_input_reg.Text = this.DX_input_mem.Text;
+            else
+                this.BX_input_mem.Text = this.DX_input_reg.Text;
         }
 
         private void MOV_CX_AX_Click(object sender, RoutedEventArgs e)
         {
-            this.CX_input.Text = this.AX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.CX_input_reg.Text = this.AX_input_mem.Text;
+            else
+                this.CX_input_mem.Text = this.AX_input_reg.Text;
         }
 
         private void MOV_CX_BX_Click(object sender, RoutedEventArgs e)
         {
-            this.CX_input.Text = this.BX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.CX_input_reg.Text = this.BX_input_mem.Text;
+            else
+                this.CX_input_mem.Text = this.BX_input_reg.Text;
         }
 
         private void MOV_CX_DX_Click(object sender, RoutedEventArgs e)
         {
-            this.CX_input.Text = this.DX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.CX_input_reg.Text = this.DX_input_mem.Text;
+            else
+                this.CX_input_reg.Text = this.DX_input_mem.Text;
         }
 
         private void MOV_DX_AX_Click(object sender, RoutedEventArgs e)
         {
-            this.DX_input.Text = this.AX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.DX_input_reg.Text = this.AX_input_mem.Text;
+            else
+                this.DX_input_mem.Text = this.AX_input_reg.Text;
         }
 
         private void MOV_DX_BX_Click(object sender, RoutedEventArgs e)
         {
-            this.DX_input.Text = this.BX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.DX_input_reg.Text = this.BX_input_mem.Text;
+            else
+                this.DX_input_reg.Text = this.BX_input_mem.Text;
         }
 
         private void MOV_DX_CX_Click(object sender, RoutedEventArgs e)
         {
-            this.DX_input.Text = this.CX_input.Text;
+            if (reg_mem.IsChecked == true)
+                this.DX_input_reg.Text = this.CX_input_mem.Text;
+            else
+                this.DX_input_reg.Text = this.CX_input_mem.Text;
         }
 
         private void ChangedColor(object sender, TextChangedEventArgs e)
         {
-            this.AX_input.Background = Brushes.White;
-            this.BX_input.Background = Brushes.White;
-            this.CX_input.Background = Brushes.White;
-            this.DX_input.Background = Brushes.White;
+            this.AX_input_reg.Background = Brushes.White;
+            this.BX_input_reg.Background = Brushes.White;
+            this.CX_input_reg.Background = Brushes.White;
+            this.DX_input_reg.Background = Brushes.White;
+
+            this.AX_input_mem.Background = Brushes.White;
+            this.BX_input_mem.Background = Brushes.White;
+            this.CX_input_mem.Background = Brushes.White;
+            this.DX_input_mem.Background = Brushes.White;
 
             if (sender is TextBox box)
             {
@@ -148,62 +204,98 @@ namespace Procesor8086
 
         private void XCHG_AX_BX_Click(object sender, RoutedEventArgs e)
         {
-            swap(AX_input, BX_input);
+            if (reg_mem.IsChecked == true)
+                swap(AX_input_reg, BX_input_mem);
+            else
+                swap(AX_input_mem, BX_input_reg);
         }
 
         private void XCHG_AX_CX_Click(object sender, RoutedEventArgs e)
         {
-            swap(AX_input, CX_input);
+            if (reg_mem.IsChecked == true)
+                swap(AX_input_reg, CX_input_mem);
+            else
+                swap(AX_input_mem, CX_input_reg);
         }
 
         private void XCHG_AX_DX_Click(object sender, RoutedEventArgs e)
         {
-            swap(AX_input, DX_input);
+            if (reg_mem.IsChecked == true)
+                swap(AX_input_reg, DX_input_mem);
+            else
+                swap(AX_input_mem, DX_input_reg);
         }
 
         private void XCHG_BX_AX_Click(object sender, RoutedEventArgs e)
         {
-            swap(BX_input, AX_input);
+            if (reg_mem.IsChecked == true)
+                swap(BX_input_reg, AX_input_mem);
+            else
+                swap(BX_input_mem, AX_input_reg);
         }
 
         private void XCHG_BX_CX_Click(object sender, RoutedEventArgs e)
         {
-            swap(BX_input, CX_input);
+            if (reg_mem.IsChecked == true)
+                swap(BX_input_reg, CX_input_mem);
+            else
+                swap(BX_input_mem, CX_input_reg);
         }
 
         private void XCHG_BX_DX_Click(object sender, RoutedEventArgs e)
         {
-            swap(BX_input, DX_input);
+            if (reg_mem.IsChecked == true)
+                swap(BX_input_reg, DX_input_mem);
+            else
+                swap(BX_input_reg, DX_input_mem);
         }
 
         private void XCHG_CX_AX_Click(object sender, RoutedEventArgs e)
         {
-            swap(CX_input, AX_input);
+            if (reg_mem.IsChecked == true)
+                swap(CX_input_reg, AX_input_mem);
+            else
+                swap(CX_input_mem, AX_input_reg);
         }
 
         private void XCHG_CX_BX_Click(object sender, RoutedEventArgs e)
         {
-            swap(CX_input, BX_input);
+            if (reg_mem.IsChecked == true)
+                swap(CX_input_reg, BX_input_mem);
+            else
+                swap(CX_input_mem, BX_input_reg);
         }
 
         private void XCHG_CX_DX_Click(object sender, RoutedEventArgs e)
         {
-            swap(CX_input, DX_input);
+            if (reg_mem.IsChecked == true)
+                swap(CX_input_reg, DX_input_mem);
+            else
+                swap(CX_input_mem, DX_input_reg);
         }
 
         private void XCHG_DX_AX_Click(object sender, RoutedEventArgs e)
         {
-            swap(DX_input, AX_input);
+            if (reg_mem.IsChecked == true)
+                swap(DX_input_reg, AX_input_mem);
+            else
+                swap(DX_input_mem, AX_input_reg);
         }
 
         private void XCHG_DX_BX_Click(object sender, RoutedEventArgs e)
         {
-            swap(DX_input, BX_input);
+            if (reg_mem.IsChecked == true)
+                swap(DX_input_reg, BX_input_mem);
+            else
+                swap(DX_input_mem, BX_input_reg);
         }
 
         private void XCHG_DX_CX_Click(object sender, RoutedEventArgs e)
         {
-            swap(DX_input, CX_input);
+            if (reg_mem.IsChecked == true)
+                swap(DX_input_reg, CX_input_mem);
+            else
+                swap(DX_input_mem, CX_input_reg);
         }
     }
 }
