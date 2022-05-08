@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Procesor8086"
         mc:Ignorable="d"
-        Title="MainWindow" Height="677" Width="800" WindowStyle="None" Background="#FFEDEDF7">
+        Title="MainWindow" Height="677" Width="796" WindowStyle="None" Background="#FFEDEDF7">
     <Window.Style>
         <Style />
     </Window.Style>
@@ -57,10 +57,39 @@
         <Button x:Name="XCHG_DX_BX" Content="XCHG DX, BX" HorizontalAlignment="Left" Height="22" Margin="113,0,0,52" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_BX_Click" />
         <Button x:Name="XCHG_DX_CX" Content="XCHG DX, CX" HorizontalAlignment="Left" Height="22" Margin="112,0,0,21" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_CX_Click" />
         <RadioButton x:Name="mem_reg" Content="Z rejestru do pamęci" HorizontalAlignment="Left" Height="17" Margin="222,9,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" />
-        <RadioButton x:Name="reg_mem" Content="Z pamięci do rejestru" HorizontalAlignment="Left" Height="17" Margin="222,30,0,0" VerticalAlignment="Top" Width="153" />
+        <RadioButton x:Name="reg_mem" Content="Z pamięci do rejestru" HorizontalAlignment="Left" Height="17" Margin="222,30,0,0" VerticalAlignment="Top" Width="153" IsChecked="True" />
         <TextBox x:Name="AX_input_mem" HorizontalAlignment="Left" Height="26" Margin="185,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
         <TextBox x:Name="BX_input_mem" HorizontalAlignment="Left" Height="26" Margin="187,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
         <TextBox x:Name="CX_input_mem" HorizontalAlignment="Left" Height="26" Margin="189,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
         <TextBox x:Name="DX_input_mem" HorizontalAlignment="Left" Height="26" Margin="188,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="2" Margin="37,65,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="5"/>
+        <TextBox x:Name="SI_input_default" HorizontalAlignment="Left" Height="26" Margin="5,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBox x:Name="DI_input_default" HorizontalAlignment="Left" Height="26" Margin="7,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBox x:Name="BP_input_default" HorizontalAlignment="Left" Height="26" Margin="9,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBox x:Name="BX_input_default" HorizontalAlignment="Left" Height="26" Margin="9,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBox x:Name="BX_input_result" HorizontalAlignment="Left" Height="26" Margin="127,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBox x:Name="BP_input_result" HorizontalAlignment="Left" Height="26" Margin="128,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBox x:Name="DI_input_result" HorizontalAlignment="Left" Height="26" Margin="132,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBox x:Name="SI_input_result" HorizontalAlignment="Left" Height="26" Margin="127,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="348,62,0,0" Text="SI" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.ColumnSpan="2" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="350,96,0,0" Text="DI" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.ColumnSpan="2" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="350,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.ColumnSpan="2" ><Run Language="pl-pl" Text="BP"/><LineBreak/><Run Language="pl-pl"/><LineBreak/><Run Language="pl-pl"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="348,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Text="BX" Grid.ColumnSpan="2" />
+        <Button x:Name="RESET_register_Copy" Content="Reset" HorizontalAlignment="Left" Height="22" Margin="64,12,0,0" VerticalAlignment="Top" Width="75" Click="ResetRegister" Grid.Column="1" />
+        <RadioButton x:Name="index" Content="Indeksowy" HorizontalAlignment="Left" Height="17" Margin="248,62,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
+        <RadioButton x:Name="bazowy" Content="Bazowy" HorizontalAlignment="Left" Height="17" Margin="252,85,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" Click="bazowy_Click" Checked="bazowy_Checked" />
+        <RadioButton x:Name="indeksowo_bazowy" Content="Indeksowo-Bazowy" HorizontalAlignment="Left" Height="17" Margin="250,109,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
+        <RadioButton x:Name="Si" Content="SI" HorizontalAlignment="Left" Height="17" Margin="260,160,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
+        <RadioButton x:Name="Di" Content="DI" HorizontalAlignment="Left" Height="17" Margin="260,185,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
+        <RadioButton x:Name="Bp" Content="BP" HorizontalAlignment="Left" Height="17" Margin="263,230,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" Checked="Bp_Checked" />
+        <RadioButton x:Name="Bx" Content="BX" HorizontalAlignment="Left" Height="17" Margin="266,246,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" Checked="Sp_Checked" />
+        <RadioButton x:Name="AX_check" Content="AX" HorizontalAlignment="Left" Height="17" Margin="323,159,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
+        <RadioButton x:Name="BX_check_Copy" Content="BX" HorizontalAlignment="Left" Height="17" Margin="326,183,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
+        <RadioButton x:Name="CX_check_Copy1" Content="CX" HorizontalAlignment="Left" Height="17" Margin="323,211,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
+        <RadioButton x:Name="DX_check_Copy" Content="DX" HorizontalAlignment="Left" Height="17" Margin="326,237,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
+        <TextBox x:Name="Adres_result" HorizontalAlignment="Left" Height="26" Margin="77,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="27,240,0,0" Text="Result" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.Column="1" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="30,269,0,0" Text="Offset" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.Column="1" />
+        <TextBox x:Name="Offset_input" HorizontalAlignment="Left" Height="26" Margin="83,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
     </Grid>
 </Window>

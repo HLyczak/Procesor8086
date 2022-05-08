@@ -32,6 +32,8 @@ namespace Procesor8086
 
         private void ResetRegister(object sender, RoutedEventArgs e)
         {
+            //BP_input_result
+
             this.AX_input_reg.Clear();
             this.BX_input_reg.Clear();
             this.CX_input_reg.Clear();
@@ -41,6 +43,20 @@ namespace Procesor8086
             this.BX_input_mem.Clear();
             this.CX_input_mem.Clear();
             this.DX_input_mem.Clear();
+
+            this.SI_input_default.Clear();
+            this.DI_input_default.Clear();
+            this.BP_input_default.Clear();
+            this.SP_input_default.Clear();
+
+            this.SI_input_result.Clear();
+            this.DI_input_result.Clear();
+            this.BP_input_result.Clear();
+            this.SP_input_result.Clear();
+
+
+
+
 
             this.AX_input_reg.Background = Brushes.White;
             this.BX_input_reg.Background = Brushes.White;
@@ -73,6 +89,12 @@ namespace Procesor8086
             this.BX_input_mem.Text = GetRandom();
             this.CX_input_mem.Text = GetRandom();
             this.DX_input_mem.Text = GetRandom();
+
+
+            this.SI_input_default.Text = GetRandom();
+            this.DI_input_default.Text = GetRandom();
+            this.BP_input_default.Text = GetRandom();
+            this.SP_input_default.Text = GetRandom();
         }
 
         private void MOV_AX_BX_Click(object sender, RoutedEventArgs e)
@@ -297,5 +319,22 @@ namespace Procesor8086
             else
                 swap(DX_input_mem, CX_input_reg);
         }
+
+        private void bazowy_Checked(object sender, RoutedEventArgs e)
+        {
+            string result = "";
+            if(Bx.IsChecked == true)
+                result = BP_input_default.Text+
+
+
+
+
+
+        }
+
+       
+
+        // tryb bazowy suma rejestru bazowego bp lub bx + przemieszczenie wzor (Np. MOV AX, [BP+2])
+
     }
 }
