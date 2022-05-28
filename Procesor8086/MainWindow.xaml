@@ -5,14 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Procesor8086"
         mc:Ignorable="d"
-        Title="MainWindow" Height="677" Width="796" WindowStyle="None" Background="#FFEDEDF7">
+        Title="MainWindow" Height="677" Width="796" WindowStyle="None" Background="#FF1A1A1D">
     <Window.Style>
         <Style />
     </Window.Style>
-    <Grid Height="606" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="10,4,5,0">
+    <Grid Height="606" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="37,4,0,0" HorizontalAlignment="Left" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="239*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="361*" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="392*" />
-            <ColumnDefinition Width="393*" />
+            <ColumnDefinition Width="390*" />
+            <ColumnDefinition Width="335*" />
+            <ColumnDefinition Width="56*" />
         </Grid.ColumnDefinitions>
         <Grid.RenderTransform>
             <TransformGroup>
@@ -22,74 +45,81 @@
                 <TranslateTransform />
             </TransformGroup>
         </Grid.RenderTransform>
-        <TextBox x:Name="BX_input_reg" HorizontalAlignment="Left" Height="26" Margin="56,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBox x:Name="AX_input_reg" HorizontalAlignment="Left" Height="26" Margin="54,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBox x:Name="CX_input_reg" HorizontalAlignment="Left" Height="26" Margin="55,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBox x:Name="DX_input_reg" HorizontalAlignment="Left" Height="26" Margin="55,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,59,0,0" Text="AX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,96,0,0" Text="BX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,135,0,0" Text="CX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="21,173,0,0" Text="DX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" />
-        <Button x:Name="MOV_AX_BX" Content="MOV AX, BX" HorizontalAlignment="Left" Height="22" Margin="12,0,0,345" VerticalAlignment="Bottom" Width="75" Click="MOV_AX_BX_Click" />
-        <Button x:Name="MOV_AX_CX" Content="MOV AX, CX" HorizontalAlignment="Left" Height="22" Margin="12,269,0,0" VerticalAlignment="Top" Width="75" Click="MOV_AX_CX_Click" />
-        <Button x:Name="MOV_AX_DX" Content="MOV AX, DX" HorizontalAlignment="Left" Height="22" Margin="12,298,0,0" VerticalAlignment="Top" Width="75" Click="MOV_AX_DX_Click" />
-        <Button x:Name="MOV_BX_AX" Content="MOV BX, AX" HorizontalAlignment="Left" Height="22" Margin="12,325,0,0" VerticalAlignment="Top" Width="75" Click="MOV_BX_AX_Click" />
-        <Button x:Name="MOV_BX_CX" Content="MOV BX, CX" HorizontalAlignment="Left" Height="22" Margin="12,352,0,0" VerticalAlignment="Top" Width="75" Click="MOV_BX_CX_Click" />
-        <Button x:Name="MOV_BX_DX" Content="MOV BX, DX" HorizontalAlignment="Left" Height="22" Margin="12,379,0,0" VerticalAlignment="Top" Width="75" Click="MOV_BX_DX_Click" />
-        <Button x:Name="MOV_CX_AX" Content="MOV CX, AX" HorizontalAlignment="Left" Height="22" Margin="12,406,0,0" VerticalAlignment="Top" Width="75" Click="MOV_CX_AX_Click" />
-        <Button x:Name="MOV_CX_BX" Content="MOV CX, BX" HorizontalAlignment="Left" Height="22" Margin="12,433,0,0" VerticalAlignment="Top" Width="75" Click="MOV_CX_BX_Click" />
-        <Button x:Name="MOV_DX_AX" Content="MOV DX, AX" HorizontalAlignment="Left" Height="22" Margin="12,488,0,0" VerticalAlignment="Top" Width="75" Click="MOV_DX_AX_Click" />
-        <Button x:Name="MOV_DX_BX" Content="MOV DX, BX" HorizontalAlignment="Left" Height="22" Margin="13,516,0,0" VerticalAlignment="Top" Width="75" Click="MOV_DX_BX_Click" />
-        <Button x:Name="MOV_DX_CX" Content="MOV DX, CX" HorizontalAlignment="Left" Height="22" Margin="13,543,0,0" VerticalAlignment="Top" Width="75" Click="MOV_DX_CX_Click" />
-        <Button x:Name="RESET_register" Content="Reset" HorizontalAlignment="Left" Height="22" Margin="21,10,0,0" VerticalAlignment="Top" Width="75" Click="ResetRegister" />
-        <Button x:Name="Random_register" Content="Random" HorizontalAlignment="Left" Height="22" Margin="115,11,0,0" VerticalAlignment="Top" Width="75" Click="RandomRegister" />
-        <Button x:Name="MOV_CX_BX_Copy" Content="MOV CX, BX" HorizontalAlignment="Left" Height="22" Margin="12,461,0,0" VerticalAlignment="Top" Width="75" Click="MOV_CX_DX_Click" />
-        <Button x:Name="XCHG_AX_BX" Content="XCHG AX, BX" HorizontalAlignment="Left" Height="22" Margin="109,0,0,345" VerticalAlignment="Bottom" Width="75" Click="XCHG_AX_BX_Click" />
-        <Button x:Name="XCHG_AX_CX" Content="XCHG AX, CX" HorizontalAlignment="Left" Height="22" Margin="110,0,0,314" VerticalAlignment="Bottom" Width="75" Click="XCHG_AX_CX_Click" />
-        <Button x:Name="XCHG_AX_DX" Content="XCHG AX, DX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,286" VerticalAlignment="Bottom" Width="75" Click="XCHG_AX_DX_Click" />
-        <Button x:Name="XCHG_BX_AX" Content="XCHG BX, AX" HorizontalAlignment="Left" Height="22" Margin="110,0,0,258" VerticalAlignment="Bottom" Width="75" Click="XCHG_BX_AX_Click" />
-        <Button x:Name="XCHG_BX_CX" Content="XCHG BX, CX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,227" VerticalAlignment="Bottom" Width="75" Click="XCHG_BX_CX_Click" />
-        <Button x:Name="XCHG_BX_DX" Content="XCHG BX, DX" HorizontalAlignment="Left" Height="22" Margin="113,0,0,198" VerticalAlignment="Bottom" Width="75" Click="XCHG_BX_DX_Click" />
-        <Button x:Name="XCHG_CX_AX" Content="XCHG CX, AX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,165" VerticalAlignment="Bottom" Width="75" Click="XCHG_CX_AX_Click" />
-        <Button x:Name="XCHG_CX_BX" Content="XCHG CX, BX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,133" VerticalAlignment="Bottom" Width="75" Click="XCHG_CX_BX_Click" />
-        <Button x:Name="XCHG_CX_DX" Content="XCHG CX, DX" HorizontalAlignment="Left" Height="22" Margin="111,0,0,105" VerticalAlignment="Bottom" Width="75" Click="XCHG_CX_DX_Click" />
-        <Button x:Name="XCHG_DX_AX" Content="XCHG DX, AX" HorizontalAlignment="Left" Height="22" Margin="113,0,0,78" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_AX_Click" />
-        <Button x:Name="XCHG_DX_BX" Content="XCHG DX, BX" HorizontalAlignment="Left" Height="22" Margin="113,0,0,52" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_BX_Click" />
-        <Button x:Name="XCHG_DX_CX" Content="XCHG DX, CX" HorizontalAlignment="Left" Height="22" Margin="112,0,0,21" VerticalAlignment="Bottom" Width="75" Click="XCHG_DX_CX_Click" />
-        <RadioButton x:Name="mem_reg" Content="Z rejestru do pamęci" HorizontalAlignment="Left" Height="17" Margin="222,9,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" />
-        <RadioButton x:Name="reg_mem" Content="Z pamięci do rejestru" HorizontalAlignment="Left" Height="17" Margin="222,30,0,0" VerticalAlignment="Top" Width="153" IsChecked="True" />
-        <TextBox x:Name="AX_input_mem" HorizontalAlignment="Left" Height="26" Margin="185,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBox x:Name="BX_input_mem" HorizontalAlignment="Left" Height="26" Margin="187,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBox x:Name="CX_input_mem" HorizontalAlignment="Left" Height="26" Margin="189,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBox x:Name="DX_input_mem" HorizontalAlignment="Left" Height="26" Margin="188,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" />
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="2" Margin="37,65,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="5"/>
-        <TextBox x:Name="SI_input_default" HorizontalAlignment="Left" Height="26" Margin="5,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
-        <TextBox x:Name="DI_input_default" HorizontalAlignment="Left" Height="26" Margin="7,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
-        <TextBox x:Name="BP_input_default" HorizontalAlignment="Left" Height="26" Margin="9,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
-        <TextBox x:Name="BX_input_default" HorizontalAlignment="Left" Height="26" Margin="9,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
-        <TextBox x:Name="BX_input_result" HorizontalAlignment="Left" Height="26" Margin="127,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
-        <TextBox x:Name="BP_input_result" HorizontalAlignment="Left" Height="26" Margin="128,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
-        <TextBox x:Name="DI_input_result" HorizontalAlignment="Left" Height="26" Margin="132,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
-        <TextBox x:Name="SI_input_result" HorizontalAlignment="Left" Height="26" Margin="127,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="348,62,0,0" Text="SI" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.ColumnSpan="2" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="350,96,0,0" Text="DI" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.ColumnSpan="2" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="350,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.ColumnSpan="2" ><Run Language="pl-pl" Text="BP"/><LineBreak/><Run Language="pl-pl"/><LineBreak/><Run Language="pl-pl"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="348,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Text="BX" Grid.ColumnSpan="2" />
-        <Button x:Name="RESET_register_Copy" Content="Reset" HorizontalAlignment="Left" Height="22" Margin="64,12,0,0" VerticalAlignment="Top" Width="75" Click="ResetRegister" Grid.Column="1" />
-        <RadioButton x:Name="index" Content="Indeksowy" HorizontalAlignment="Left" Height="17" Margin="248,62,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
-        <RadioButton x:Name="bazowy" Content="Bazowy" HorizontalAlignment="Left" Height="17" Margin="252,85,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" Click="bazowy_Click" Checked="bazowy_Checked" />
-        <RadioButton x:Name="indeksowo_bazowy" Content="Indeksowo-Bazowy" HorizontalAlignment="Left" Height="17" Margin="250,109,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
-        <RadioButton x:Name="Si" Content="SI" HorizontalAlignment="Left" Height="17" Margin="260,160,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
-        <RadioButton x:Name="Di" Content="DI" HorizontalAlignment="Left" Height="17" Margin="260,185,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
-        <RadioButton x:Name="Bp" Content="BP" HorizontalAlignment="Left" Height="17" Margin="263,230,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" Checked="Bp_Checked" />
-        <RadioButton x:Name="Bx" Content="BX" HorizontalAlignment="Left" Height="17" Margin="266,246,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" Checked="Sp_Checked" />
-        <RadioButton x:Name="AX_check" Content="AX" HorizontalAlignment="Left" Height="17" Margin="323,159,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
-        <RadioButton x:Name="BX_check_Copy" Content="BX" HorizontalAlignment="Left" Height="17" Margin="326,183,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
-        <RadioButton x:Name="CX_check_Copy1" Content="CX" HorizontalAlignment="Left" Height="17" Margin="323,211,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
-        <RadioButton x:Name="DX_check_Copy" Content="DX" HorizontalAlignment="Left" Height="17" Margin="326,237,0,0" VerticalAlignment="Top" Width="131" IsChecked="True" Grid.Column="1" />
-        <TextBox x:Name="Adres_result" HorizontalAlignment="Left" Height="26" Margin="77,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="27,240,0,0" Text="Result" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.Column="1" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="30,269,0,0" Text="Offset" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.Column="1" />
-        <TextBox x:Name="Offset_input" HorizontalAlignment="Left" Height="26" Margin="83,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" />
+        <TextBox x:Name="BX_input_reg" HorizontalAlignment="Left" Height="26" Margin="140,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Row="1" Foreground="#FF221403" Background="#FF140101" BorderBrush="#FFE2E6F1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="AX_input_reg" HorizontalAlignment="Left" Height="26" Margin="140,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Row="1" Foreground="#FF221403" Background="#FF140101" BorderBrush="#FFE2E6F1" SelectionTextBrush="#FF0B0101" Padding="1,1,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="CX_input_reg" HorizontalAlignment="Left" Height="26" Margin="141,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.RowSpan="19" Grid.Row="1" Foreground="#FF221403" Background="#FF140101" BorderBrush="#FFE2E6F1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="DX_input_reg" HorizontalAlignment="Left" Height="26" Margin="139,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Row="18" Grid.RowSpan="2" Foreground="#FF221403" Background="#FF140101" BorderBrush="#FFE2E6F1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="47,145,0,0" Text="AX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.Row="1" Foreground="#FFF1F30D" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="48,190,0,0" Text="BX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.Row="1" Foreground="#FFF1F30D" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="47,237,0,0" Text="CX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.Row="1" Foreground="#FFF1F30D" Grid.RowSpan="19" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="47,40,0,0" Text="DX" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" RenderTransformOrigin="0.481,2.315" Grid.Row="18" Grid.RowSpan="2" Foreground="#FFF1F30D" />
+        <Button x:Name="MOV" Content="MOV" HorizontalAlignment="Left" Height="26" Margin="14,0,0,189" VerticalAlignment="Bottom" Width="80" Click="MOV2" Grid.Row="18" Grid.RowSpan="2" Foreground="#FFEDE726" BorderBrush="#FFF6F3F3" Background="#FF1D1C1C" />
+        <Button x:Name="RESET_register" Content="Reset" HorizontalAlignment="Left" Height="30" Margin="95,63,0,0" VerticalAlignment="Top" Width="90" Click="ResetRegister" Grid.Row="1" Foreground="#FF050404" BorderBrush="#FF090909" Background="#FFDA1111" FontWeight="Bold" Padding="1,1,1,1" UseLayoutRounding="True" />
+        <Button x:Name="Random_register" Content="Random" HorizontalAlignment="Left" Height="30" Margin="219,63,0,0" VerticalAlignment="Top" Width="90" Click="RandomRegister" Grid.Row="1" Foreground="#FF151515" BorderBrush="#FF140D0D" MouseEnter="Random_register_MouseEnter" />
+        <Button x:Name="XCHG" Content="XCHG" HorizontalAlignment="Left" Height="26" Margin="14,0,0,126" VerticalAlignment="Bottom" Width="80" Grid.Row="18" Grid.RowSpan="2" Foreground="#FFF7F90D" Background="#FF0B0A0A" BorderBrush="#FFF4EFEF" Click="XCHG_Click" />
+        <RadioButton x:Name="mem_reg" Content="Z rejestru do pamęci" HorizontalAlignment="Left" Height="30" Margin="4,98,0,0" VerticalAlignment="Top" Width="155" IsChecked="True" GroupName="rodzaj" Grid.Row="19" Foreground="#FFF1F30D" Grid.Column="1" BorderBrush="#FF1A1818" Background="#FFF3EBEB" />
+        <RadioButton x:Name="reg_mem" Content="Z pamięci do rejestru" HorizontalAlignment="Left" Height="30" Margin="173,99,0,0" VerticalAlignment="Top" Width="152" Grid.Column="1" GroupName="rodzaj" Grid.Row="19" Foreground="#FFF1F30D" BorderBrush="#FF111010" Background="#FFFAF9F9" Click="reg_mem_Click" />
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="2" Margin="29,171,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="5" Grid.Row="1" Foreground="#FFC5C1BC" />
+        <TextBox x:Name="SI_input_default" HorizontalAlignment="Left" Height="26" Margin="6,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Row="1" Foreground="#FF1D0101" Grid.Column="1" SelectionTextBrush="#FF150101" Background="#FF110202" BorderBrush="#FFFEFEFF" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="DI_input_default" HorizontalAlignment="Left" Height="26" Margin="4,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Row="1" Foreground="#FF1D0101" Grid.Column="1" SelectionTextBrush="#FF150101" Background="#FF110202" BorderBrush="#FFFEFEFF" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="BP_input_default" HorizontalAlignment="Left" Height="26" Margin="5,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" Grid.Row="1" Foreground="#FF1D0101" Grid.RowSpan="19" SelectionTextBrush="#FF150101" Background="#FF110202" BorderBrush="#FFFEFEFF" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="BX_input_default" HorizontalAlignment="Left" Height="23" Margin="6,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" Grid.Row="19" Foreground="#FF1D0101" SelectionTextBrush="#FF150101" Background="#FF110202" BorderBrush="#FFFEFEFF" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="331,146,0,0" Text="SI" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.ColumnSpan="2" Grid.Row="1" Foreground="#FFF1F30D" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="328,192,0,0" Text="DI" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.ColumnSpan="2" Grid.Row="1" Foreground="#FFF1F30D" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="328,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.ColumnSpan="2" Grid.Row="1" Foreground="#FFF1F30D" Grid.RowSpan="19" ><Run Language="pl-pl" Text="BP" /><LineBreak /><Run Language="pl-pl" /><LineBreak /><Run Language="pl-pl" /></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="326,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Text="BX" Grid.ColumnSpan="2" Grid.Row="19" Foreground="#FFF1F30D" />
+        <RadioButton x:Name="indeksowy" Content="Indeksowy" HorizontalAlignment="Left" Height="26" Margin="151,149,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1" GroupName="tryb" Grid.Row="1" Foreground="#FFF1F30D" Checked="indeksowy_Checked" Background="#FFF9F7F7" />
+        <RadioButton x:Name="bazowy" Content="Bazowy" HorizontalAlignment="Left" Height="26" Margin="153,197,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1" GroupName="tryb" Grid.Row="1" Foreground="#FFF1F30D" Checked="bazowy_Checked" Background="#FFFDFAFA" />
+        <RadioButton x:Name="indeksowo_bazowy" Content="Indeksowo-Bazowy" HorizontalAlignment="Left" Height="70" Margin="152,9,0,0" VerticalAlignment="Top" Width="159" Grid.Column="1" RenderTransformOrigin="-0.45,2.066" GroupName="tryb" Grid.Row="19" Foreground="#FFF1F30D" Checked="indeksowo_bazowy_Checked" Background="#FFF9F2F2" IsChecked="True" />
+        <RadioButton x:Name="Si" Content="SI" HorizontalAlignment="Left" Height="26" Margin="276,167,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1" GroupName="INDEKSOWE" Grid.Row="1" Foreground="#FFF1F30D" Grid.ColumnSpan="2" />
+        <RadioButton x:Name="Di" Content="DI" HorizontalAlignment="Left" Height="26" Margin="5,167,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.Column="2" GroupName="INDEKSOWE" Grid.Row="1" Foreground="#FFF1F30D" />
+        <RadioButton x:Name="Bp" Content="BP" HorizontalAlignment="Left" Height="26" Margin="276,221,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1" Checked="Bp_Checked" GroupName="bazowe" Grid.ColumnSpan="2" Grid.Row="1" Foreground="#FFF1F30D" Grid.RowSpan="19" />
+        <RadioButton x:Name="Bx" Content="BX" HorizontalAlignment="Left" Height="26" Margin="5,221,0,0" VerticalAlignment="Top" Width="80" Grid.Column="2" Checked="Bx_Checked" GroupName="bazowe" Grid.Row="1" Foreground="#FFF1F30D" Grid.RowSpan="19" />
+        <RadioButton x:Name="AX_check" Content="AX" HorizontalAlignment="Left" Height="30" Margin="348,154,0,0" VerticalAlignment="Top" Width="80" Checked="AX_check_Checked" GroupName="podst" RenderTransformOrigin="0.741,0.532" Grid.Row="2" Grid.RowSpan="18" Foreground="#FFF1F30D" Grid.ColumnSpan="2" Click="AX_check_Click" BorderBrush="#FFB0A8A8" Background="#FFF9F7F7" />
+        <RadioButton x:Name="BX_check" Content="BX" HorizontalAlignment="Left" Height="30" Margin="83,154,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.Column="1" Checked="BX_check_Checked" GroupName="podst" RenderTransformOrigin="0.657,0.417" Grid.Row="2" Grid.RowSpan="18" Foreground="#FFF1F30D" Click="BX_check_Click" BorderBrush="#FF908A8A" Background="#FFFFFCFC" />
+        <RadioButton x:Name="CX_check" Content="CX" HorizontalAlignment="Left" Height="30" Margin="173,155,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1" Checked="CX_check_Checked" GroupName="podst" Grid.Row="2" Grid.RowSpan="18" Foreground="#FFF1F30D" BorderBrush="#FF8C8888" Background="#FFF9F7F7" Click="CX_check_Click" />
+        <RadioButton x:Name="DX_check" Content="DX" HorizontalAlignment="Left" Height="30" Margin="254,155,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1" Checked="DX_check_Checked" GroupName="podst" Grid.Row="2" Grid.RowSpan="18" Grid.ColumnSpan="2" Foreground="#FFF1F30D" Click="DX_check_Click" BorderBrush="#FF898888" Background="#FFF9EDED" />
+        <TextBox x:Name="Nr_rejestru_result" HorizontalAlignment="Left" Height="26" Margin="23,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" Grid.Row="2" Grid.RowSpan="18" Foreground="#FF0C0C0C" SelectionTextBrush="#FFF4EDED" Background="#FF090000" BorderBrush="#FFECEFF6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="100,70,0,0" Text="Offset" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Grid.Column="1" Grid.Row="1" Foreground="#FFF1F30D" />
+        <TextBox x:Name="Offset_input" HorizontalAlignment="Left" Height="30" Margin="175,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" Grid.Row="1" Foreground="#FF0C0A08" BorderBrush="#FFFAFAFA" Background="#FF080101" SelectionTextBrush="#FFF9EDED" SelectionBrush="#FFDCBAF0" TextAlignment="Center" Padding="0,0,0,0" UseLayoutRounding="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="Adres_result" HorizontalAlignment="Left" Height="26" Margin="180,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" Grid.Row="2" Grid.RowSpan="18" Foreground="#FF110101" SelectionTextBrush="White" Background="#FF090000" BorderBrush="#FFF9FBFF" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Button x:Name="mov_button" Content="MOV" HorizontalAlignment="Left" Height="26" Margin="42,225,0,0" VerticalAlignment="Top" Width="80" Click="move_click" Grid.Column="1" IsCancel="True" Grid.Row="2" Grid.RowSpan="18" Foreground="#FFEDE726" BorderBrush="#FFFAFAFA" Background="#FF0C0101" />
+        <TextBox x:Name="Adres_result_Copy" HorizontalAlignment="Left" Height="26" Margin="180,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.207,0.548" TextChanged="ChangedColor" PreviewTextInput="CheckIsHex" Grid.Column="1" Grid.Row="2" Grid.RowSpan="18" Foreground="#FF140101" SelectionTextBrush="#FFFAF8F8" Background="#FF090000" BorderBrush="#FFF1F2F7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+        <ComboBox x:Name="dropdown_move" Margin="113,150,183,0" Grid.Row="19" VerticalAlignment="Top" SelectionChanged="dropdown_move_SelectionChanged" Height="23" DropDownClosed="dropdown_move_DropDownClosed" Width="72" HorizontalAlignment="Center" HorizontalContentAlignment="Center">
+            <ComboBoxItem IsSelected="True" Content="AX" />
+            <ComboBoxItem Content="BX" />
+            <ComboBoxItem Content="CX" />
+            <ComboBoxItem Content="DX" />
+        </ComboBox>
+        <ComboBox x:Name="dropdown_move2" Margin="222,149,67,0" Grid.Row="19" VerticalAlignment="Top" Height="23" SelectionChanged="dropdown_move2_SelectionChanged" DropDownClosed="dropdown_move2_DropDownClosed" Width="72" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ComboBoxItem  Content="AX" />
+            <ComboBoxItem IsSelected="True" Content="BX" />
+            <ComboBoxItem Content="CX" />
+            <ComboBoxItem Content="DX" />
+        </ComboBox>
+        <ComboBox x:Name="dropdown_xchg" Margin="113,212,183,0" Grid.Row="19" VerticalAlignment="Top" SelectionChanged="dropdown_move_SelectionChanged" Height="23" DropDownClosed="dropdown_xchg_DropDownClosed" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+            <ComboBoxItem IsSelected="True" Content="AX" />
+            <ComboBoxItem Content="BX" />
+            <ComboBoxItem Content="CX" />
+            <ComboBoxItem Content="DX" />
+        </ComboBox>
+        <ComboBox x:Name="dropdown_xchg2" Margin="224,213,72,0" Grid.Row="19" VerticalAlignment="Top" SelectionChanged="dropdown_move_SelectionChanged" Height="23" DropDownClosed="dropdown_xchg2_DropDownClosed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ComboBoxItem  Content="AX" />
+            <ComboBoxItem IsSelected="True" Content="BX" />
+            <ComboBoxItem Content="CX" />
+            <ComboBoxItem Content="DX" />
+        </ComboBox>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="39" Margin="169,6,0,0" Grid.Row="1" Text="Symulator wybranych poleceń Procesora 8086" TextWrapping="Wrap" VerticalAlignment="Top" Width="481" Foreground="#FFE5D9D8" FontStyle="Normal" TextDecorations="{x:Null}" FontWeight="Bold" FontSize="22" FontFamily="Calibri">
+            <TextBlock.Effect>
+                <DropShadowEffect />
+            </TextBlock.Effect>
+            <TextBlock.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" />
+                    <GradientStop Color="#FFF3ECEC" Offset="1" />
+                </LinearGradientBrush>
+            </TextBlock.OpacityMask>
+        </TextBlock>
     </Grid>
 </Window>

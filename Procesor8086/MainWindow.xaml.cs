@@ -32,47 +32,32 @@ namespace Procesor8086
 
         private void ResetRegister(object sender, RoutedEventArgs e)
         {
-            //BP_input_result
-
             this.AX_input_reg.Clear();
             this.BX_input_reg.Clear();
             this.CX_input_reg.Clear();
             this.DX_input_reg.Clear();
 
-            this.AX_input_mem.Clear();
-            this.BX_input_mem.Clear();
-            this.CX_input_mem.Clear();
-            this.DX_input_mem.Clear();
-
             this.SI_input_default.Clear();
             this.DI_input_default.Clear();
             this.BP_input_default.Clear();
-            this.SP_input_default.Clear();
-
-            this.SI_input_result.Clear();
-            this.DI_input_result.Clear();
-            this.BP_input_result.Clear();
-            this.SP_input_result.Clear();
-
-
-
-
+            this.BX_input_default.Clear();
+            this.Offset_input.Clear();
+            this.Adres_result.Clear();
+            this.Nr_rejestru_result.Clear();
 
             this.AX_input_reg.Background = Brushes.White;
             this.BX_input_reg.Background = Brushes.White;
             this.CX_input_reg.Background = Brushes.White;
             this.DX_input_reg.Background = Brushes.White;
-
-            this.AX_input_mem.Background = Brushes.White;
-            this.BX_input_mem.Background = Brushes.White;
-            this.CX_input_mem.Background = Brushes.White;
-            this.DX_input_mem.Background = Brushes.White;
+            this.Nr_rejestru_result.Background = Brushes.White;
+            this.Adres_result.Background = Brushes.White;
+            this.Adres_result_Copy.Background = Brushes.White;
         }
 
         private string GetRandom()
         {
             Random random = new Random();
-            int num = random.Next(65535);
+            int num = random.Next(5000, 10000);
             string hexString = num.ToString("X");
 
             return hexString;
@@ -85,112 +70,10 @@ namespace Procesor8086
             this.CX_input_reg.Text = GetRandom();
             this.DX_input_reg.Text = GetRandom();
 
-            this.AX_input_mem.Text = GetRandom();
-            this.BX_input_mem.Text = GetRandom();
-            this.CX_input_mem.Text = GetRandom();
-            this.DX_input_mem.Text = GetRandom();
-
-
             this.SI_input_default.Text = GetRandom();
             this.DI_input_default.Text = GetRandom();
             this.BP_input_default.Text = GetRandom();
-            this.SP_input_default.Text = GetRandom();
-        }
-
-        private void MOV_AX_BX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.AX_input_reg.Text = this.BX_input_mem.Text;
-            else
-                this.AX_input_mem.Text = this.BX_input_reg.Text;
-        }
-
-        private void MOV_AX_CX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.AX_input_reg.Text = this.CX_input_mem.Text;
-            else
-                this.AX_input_mem.Text = this.CX_input_reg.Text;
-        }
-
-        private void MOV_AX_DX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.AX_input_reg.Text = this.DX_input_mem.Text;
-            else
-                this.AX_input_mem.Text = this.DX_input_reg.Text;
-        }
-
-        private void MOV_BX_AX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.BX_input_reg.Text = this.AX_input_mem.Text;
-            else
-                this.BX_input_mem.Text = this.AX_input_reg.Text;
-        }
-
-        private void MOV_BX_CX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.BX_input_reg.Text = this.CX_input_mem.Text;
-            else
-                this.BX_input_mem.Text = this.CX_input_reg.Text;
-        }
-
-        private void MOV_BX_DX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.BX_input_reg.Text = this.DX_input_mem.Text;
-            else
-                this.BX_input_mem.Text = this.DX_input_reg.Text;
-        }
-
-        private void MOV_CX_AX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.CX_input_reg.Text = this.AX_input_mem.Text;
-            else
-                this.CX_input_mem.Text = this.AX_input_reg.Text;
-        }
-
-        private void MOV_CX_BX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.CX_input_reg.Text = this.BX_input_mem.Text;
-            else
-                this.CX_input_mem.Text = this.BX_input_reg.Text;
-        }
-
-        private void MOV_CX_DX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.CX_input_reg.Text = this.DX_input_mem.Text;
-            else
-                this.CX_input_reg.Text = this.DX_input_mem.Text;
-        }
-
-        private void MOV_DX_AX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.DX_input_reg.Text = this.AX_input_mem.Text;
-            else
-                this.DX_input_mem.Text = this.AX_input_reg.Text;
-        }
-
-        private void MOV_DX_BX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.DX_input_reg.Text = this.BX_input_mem.Text;
-            else
-                this.DX_input_reg.Text = this.BX_input_mem.Text;
-        }
-
-        private void MOV_DX_CX_Click(object sender, RoutedEventArgs e)
-        {
-            if (reg_mem.IsChecked == true)
-                this.DX_input_reg.Text = this.CX_input_mem.Text;
-            else
-                this.DX_input_reg.Text = this.CX_input_mem.Text;
+            this.BX_input_default.Text = GetRandom();
         }
 
         private void ChangedColor(object sender, TextChangedEventArgs e)
@@ -200,14 +83,9 @@ namespace Procesor8086
             this.CX_input_reg.Background = Brushes.White;
             this.DX_input_reg.Background = Brushes.White;
 
-            this.AX_input_mem.Background = Brushes.White;
-            this.BX_input_mem.Background = Brushes.White;
-            this.CX_input_mem.Background = Brushes.White;
-            this.DX_input_mem.Background = Brushes.White;
-
             if (sender is TextBox box)
             {
-                box.Background = Brushes.PowderBlue;
+                box.Background = Brushes.White;
             }
         }
 
@@ -224,117 +102,376 @@ namespace Procesor8086
             b.Text = temp;
         }
 
-        private void XCHG_AX_BX_Click(object sender, RoutedEventArgs e)
+        /* if (reg_mem.IsChecked == true)
+             swap(AX_input_reg, BX_input_mem);
+         else
+             swap(AX_input_mem, BX_input_reg);*/
+
+        private void move_click(object sender, RoutedEventArgs e)
         {
-            if (reg_mem.IsChecked == true)
-                swap(AX_input_reg, BX_input_mem);
+            if (mem_reg.IsChecked == true)
+            {
+                if (indeksowy.IsChecked == true && Si.IsChecked == true && AX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(SI_input_default.Text, Offset_input.Text);
+                else if (indeksowy.IsChecked == true && Si.IsChecked == true && BX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(SI_input_default.Text, Offset_input.Text);
+                else if (indeksowy.IsChecked == true && Si.IsChecked == true && CX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(SI_input_default.Text, Offset_input.Text);
+                else if (indeksowy.IsChecked == true && Si.IsChecked == true && DX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(SI_input_default.Text, Offset_input.Text);
+                //
+                else if (indeksowy.IsChecked == true && Di.IsChecked == true && AX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(DI_input_default.Text, Offset_input.Text);
+                else if (indeksowy.IsChecked == true && Di.IsChecked == true && BX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(DI_input_default.Text, Offset_input.Text);
+                else if (indeksowy.IsChecked == true && Di.IsChecked == true && CX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(DI_input_default.Text, Offset_input.Text);
+                else if (indeksowy.IsChecked == true && Di.IsChecked == true && DX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(DI_input_default.Text, Offset_input.Text);
+
+                //
+                else if (bazowy.IsChecked == true && Bx.IsChecked == true && AX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(BX_input_default.Text, Offset_input.Text);
+                else if (bazowy.IsChecked == true && Bx.IsChecked == true && BX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(BX_input_default.Text, Offset_input.Text);
+                else if (bazowy.IsChecked == true && Bx.IsChecked == true && CX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(BX_input_default.Text, Offset_input.Text);
+                else if (bazowy.IsChecked == true && Bx.IsChecked == true && DX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(BX_input_default.Text, Offset_input.Text);
+                //
+                else if (bazowy.IsChecked == true && Bp.IsChecked == true && AX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(BP_input_default.Text, Offset_input.Text);
+                else if (bazowy.IsChecked == true && Bp.IsChecked == true && BX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(BP_input_default.Text, Offset_input.Text);
+                else if (bazowy.IsChecked == true && Bp.IsChecked == true && CX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(BP_input_default.Text, Offset_input.Text);
+                else if (bazowy.IsChecked == true && Bp.IsChecked == true && DX_check.IsChecked == true)
+                    this.Adres_result.Text = AddHex(BP_input_default.Text, Offset_input.Text);
+                //
+                else if (indeksowo_bazowy.IsChecked == true && Si.IsChecked == true && Bp.IsChecked == true)
+                    this.Adres_result.Text = AddHex(SI_input_default.Text, Offset_input.Text + BP_input_default.Text);
+                else if (indeksowo_bazowy.IsChecked == true && Si.IsChecked == true && Bx.IsChecked == true)
+                    this.Adres_result.Text = AddHex(SI_input_default.Text, Offset_input.Text + BX_input_default.Text);
+
+                //
+                else if (indeksowo_bazowy.IsChecked == true && Di.IsChecked == true && Bp.IsChecked == true)
+                    this.Adres_result.Text = AddHex(DI_input_default.Text, Offset_input.Text, BP_input_default.Text);
+                else if (indeksowo_bazowy.IsChecked == true && Di.IsChecked == true && Bx.IsChecked == true)
+                    this.Adres_result.Text = AddHex(DI_input_default.Text, Offset_input.Text, BX_input_default.Text);
+            }
+            // tryb bazowy suma rejestru bazowego bp lub bx + przemieszczenie wzor (Np. MOV AX, [BP+2])
+            // tryb bazowy suma rejestru bazowego bp lub bx + przemieszczenie wzor (Np. MOV AX, [BP+2])
             else
-                swap(AX_input_mem, BX_input_reg);
+            {
+                if (indeksowy.IsChecked == true && Si.IsChecked == true && AX_check.IsChecked == true)
+                {
+                    this.SI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.AX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (indeksowy.IsChecked == true && Si.IsChecked == true && BX_check.IsChecked == true)
+                {
+                    this.SI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.BX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (indeksowy.IsChecked == true && Si.IsChecked == true && CX_check.IsChecked == true)
+                {
+                    this.SI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.CX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (indeksowy.IsChecked == true && Si.IsChecked == true && DX_check.IsChecked == true)
+                {
+                    this.SI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.DX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                //
+                if (indeksowy.IsChecked == true && Di.IsChecked == true && AX_check.IsChecked == true)
+                {
+                    this.DI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.AX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (indeksowy.IsChecked == true && Si.IsChecked == true && BX_check.IsChecked == true)
+                {
+                    this.DI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.BX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (indeksowy.IsChecked == true && Si.IsChecked == true && CX_check.IsChecked == true)
+                {
+                    this.DI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.CX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (indeksowy.IsChecked == true && Si.IsChecked == true && DX_check.IsChecked == true)
+                {
+                    this.DI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.DX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+
+                //
+                if (indeksowy.IsChecked == true && Si.IsChecked == true && AX_check.IsChecked == true)
+                {
+                    this.SI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.AX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (bazowy.IsChecked == true && Bp.IsChecked == true && AX_check.IsChecked == true)
+                {
+                    this.BP_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.AX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (bazowy.IsChecked == true && Bp.IsChecked == true && BX_check.IsChecked == true)
+                {
+                    this.BP_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.BX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (bazowy.IsChecked == true && Bp.IsChecked == true && CX_check.IsChecked == true)
+                {
+                    this.BP_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.CX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (bazowy.IsChecked == true && Bp.IsChecked == true && DX_check.IsChecked == true)
+                {
+                    this.BP_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.DX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                //
+                if (bazowy.IsChecked == true && Bx.IsChecked == true && AX_check.IsChecked == true)
+                {
+                    this.BX_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.AX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (bazowy.IsChecked == true && Bx.IsChecked == true && BX_check.IsChecked == true)
+                {
+                    this.BX_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.BX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (bazowy.IsChecked == true && Bx.IsChecked == true && CX_check.IsChecked == true)
+                {
+                    this.BX_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.CX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                if (bazowy.IsChecked == true && Bx.IsChecked == true && DX_check.IsChecked == true)
+                {
+                    this.BX_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
+                    this.DX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                //
+                else if (indeksowo_bazowy.IsChecked == true && (Di.IsChecked == true || Si.IsChecked == true) && (Bp.IsChecked == true || Bx.IsChecked == true) && AX_check.IsChecked == true)
+                {
+                    this.AX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                else if (indeksowo_bazowy.IsChecked == true && (Di.IsChecked == true || Si.IsChecked == true) && (Bp.IsChecked == true || Bx.IsChecked == true) && BX_check.IsChecked == true)
+                {
+                    this.BX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                else if (indeksowo_bazowy.IsChecked == true && (Di.IsChecked == true || Si.IsChecked == true) && (Bp.IsChecked == true || Bx.IsChecked == true) && CX_check.IsChecked == true)
+                {
+                    this.CX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+                else if (indeksowo_bazowy.IsChecked == true && (Di.IsChecked == true || Si.IsChecked == true) && (Bp.IsChecked == true || Bx.IsChecked == true) && DX_check.IsChecked == true)
+                {
+                    this.DX_input_reg.Text = Nr_rejestru_result.Text;
+                }
+            }
         }
 
-        private void XCHG_AX_CX_Click(object sender, RoutedEventArgs e)
+        private string AddHex(string a, string b)
         {
-            if (reg_mem.IsChecked == true)
-                swap(AX_input_reg, CX_input_mem);
-            else
-                swap(AX_input_mem, CX_input_reg);
+            return (int.Parse(a, NumberStyles.HexNumber) + int.Parse(b, NumberStyles.HexNumber)).ToString("X");
         }
 
-        private void XCHG_AX_DX_Click(object sender, RoutedEventArgs e)
+        private string AddHex(string a, string b, string c)
         {
-            if (reg_mem.IsChecked == true)
-                swap(AX_input_reg, DX_input_mem);
-            else
-                swap(AX_input_mem, DX_input_reg);
+            return (int.Parse(a, NumberStyles.HexNumber) + int.Parse(b, NumberStyles.HexNumber) + int.Parse(c, NumberStyles.HexNumber)).ToString("X");
         }
 
-        private void XCHG_BX_AX_Click(object sender, RoutedEventArgs e)
+        private string SubstractHex(string a, string b)
         {
-            if (reg_mem.IsChecked == true)
-                swap(BX_input_reg, AX_input_mem);
-            else
-                swap(BX_input_mem, AX_input_reg);
+            return (int.Parse(a, NumberStyles.HexNumber) - int.Parse(b, NumberStyles.HexNumber)).ToString("X");
         }
 
-        private void XCHG_BX_CX_Click(object sender, RoutedEventArgs e)
+        private string SubstractHex(string a, string b, string c)
         {
-            if (reg_mem.IsChecked == true)
-                swap(BX_input_reg, CX_input_mem);
-            else
-                swap(BX_input_mem, CX_input_reg);
+            return (int.Parse(a, NumberStyles.HexNumber) - int.Parse(b, NumberStyles.HexNumber) - int.Parse(c, NumberStyles.HexNumber)).ToString("X");
         }
 
-        private void XCHG_BX_DX_Click(object sender, RoutedEventArgs e)
+        private void dropdown_move_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (reg_mem.IsChecked == true)
-                swap(BX_input_reg, DX_input_mem);
-            else
-                swap(BX_input_reg, DX_input_mem);
         }
 
-        private void XCHG_CX_AX_Click(object sender, RoutedEventArgs e)
+        private void MOV2(object sender, RoutedEventArgs e)
         {
-            if (reg_mem.IsChecked == true)
-                swap(CX_input_reg, AX_input_mem);
-            else
-                swap(CX_input_mem, AX_input_reg);
+            var inputA = GetInput(dropdown_move.Text);
+            var inputB = GetInput(dropdown_move2.Text);
+
+            inputA.Text = inputB.Text;
         }
 
-        private void XCHG_CX_BX_Click(object sender, RoutedEventArgs e)
+        private TextBox GetInput(string name)
         {
-            if (reg_mem.IsChecked == true)
-                swap(CX_input_reg, BX_input_mem);
-            else
-                swap(CX_input_mem, BX_input_reg);
+            if (name == "AX")
+            {
+                return AX_input_reg;
+            }
+            if (name == "BX")
+            {
+                return BX_input_reg;
+            }
+            if (name == "CX")
+            {
+                return CX_input_reg;
+            }
+
+            return DX_input_reg;
         }
 
-        private void XCHG_CX_DX_Click(object sender, RoutedEventArgs e)
+        private void AX_check_Checked(object sender, RoutedEventArgs e)
         {
-            if (reg_mem.IsChecked == true)
-                swap(CX_input_reg, DX_input_mem);
-            else
-                swap(CX_input_mem, DX_input_reg);
         }
 
-        private void XCHG_DX_AX_Click(object sender, RoutedEventArgs e)
+        private void BX_check_Checked(object sender, RoutedEventArgs e)
         {
-            if (reg_mem.IsChecked == true)
-                swap(DX_input_reg, AX_input_mem);
-            else
-                swap(DX_input_mem, AX_input_reg);
         }
 
-        private void XCHG_DX_BX_Click(object sender, RoutedEventArgs e)
+        private void CX_check_Checked(object sender, RoutedEventArgs e)
         {
-            if (reg_mem.IsChecked == true)
-                swap(DX_input_reg, BX_input_mem);
-            else
-                swap(DX_input_mem, BX_input_reg);
         }
 
-        private void XCHG_DX_CX_Click(object sender, RoutedEventArgs e)
+        private void DX_check_Checked(object sender, RoutedEventArgs e)
         {
-            if (reg_mem.IsChecked == true)
-                swap(DX_input_reg, CX_input_mem);
-            else
-                swap(DX_input_mem, CX_input_reg);
+        }
+
+        private void Bx_Checked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Bp_Checked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void XCHG_Click(object sender, RoutedEventArgs e)
+        {
+            var inputA = GetInput(dropdown_move.Text);
+            var inputB = GetInput(dropdown_move2.Text);
+
+            swap(inputA, inputB);
+        }
+
+        private void dropdown_move2_Selected_1(object sender, RoutedEventArgs e)
+        {
+            if (dropdown_move.Text == dropdown_move2.Text)
+            {
+                dropdown_move2.SelectedItem = null;
+            }
+        }
+
+        private void dropdown_move2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
+
+        private void dropdown_move2_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+        }
+
+        private void dropdown_move2_DropDownClosed(object sender, EventArgs e)
+        {
+            if (dropdown_move.Text == dropdown_move2.Text)
+            {
+                dropdown_move2.SelectedItem = null;
+            }
+        }
+
+        private void dropdown_move_DropDownClosed(object sender, EventArgs e)
+        {
+            if (dropdown_move.Text == dropdown_move2.Text)
+            {
+                dropdown_move.SelectedItem = null;
+            }
+        }
+
+        private void dropdown_xchg_DropDownClosed(object sender, EventArgs e)
+        {
+            if (dropdown_xchg.Text == dropdown_xchg2.Text)
+            {
+                dropdown_xchg.SelectedItem = null;
+            }
+        }
+
+        private void dropdown_xchg2_DropDownClosed(object sender, EventArgs e)
+        {
+            if (dropdown_xchg.Text == dropdown_xchg2.Text)
+            {
+                dropdown_xchg2.SelectedItem = null;
+            }
+        }
+
+        private void indeksowy_Checked(object sender, RoutedEventArgs e)
+        {
+            if (Bp != null && Bx != null)
+            {
+                Bp.Visibility = Visibility.Hidden;
+                Bx.Visibility = Visibility.Hidden;
+
+                Si.Visibility = Visibility.Visible;
+                Di.Visibility = Visibility.Visible;
+            }
         }
 
         private void bazowy_Checked(object sender, RoutedEventArgs e)
         {
-            string result = "";
-            if(Bx.IsChecked == true)
-                result = BP_input_default.Text+
+            if (Si != null && Di != null)
+            {
+                Si.Visibility = Visibility.Hidden;
+                Di.Visibility = Visibility.Hidden;
 
-
-
-
-
+                Bp.Visibility = Visibility.Visible;
+                Bx.Visibility = Visibility.Visible;
+            }
         }
 
-       
+        private void indeksowo_bazowy_Checked(object sender, RoutedEventArgs e)
+        {
+            if (Si != null && Di != null && Bp != null && Bx != null)
+            {
+                Si.Visibility = Visibility.Visible;
+                Di.Visibility = Visibility.Visible;
 
-        // tryb bazowy suma rejestru bazowego bp lub bx + przemieszczenie wzor (Np. MOV AX, [BP+2])
+                Bp.Visibility = Visibility.Visible;
+                Bx.Visibility = Visibility.Visible;
+            }
+        }
 
+        private void AX_check_Click(object sender, RoutedEventArgs e)
+        {
+            if (mem_reg.IsChecked == true)
+                this.Nr_rejestru_result.Text = AX_input_reg.Text;
+        }
+
+        private void BX_check_Click(object sender, RoutedEventArgs e)
+        {
+            if (mem_reg.IsChecked == true)
+                this.Nr_rejestru_result.Text = BX_input_reg.Text;
+        }
+
+        private void DX_check_Click(object sender, RoutedEventArgs e)
+        {
+            if (mem_reg.IsChecked == true)
+                this.Nr_rejestru_result.Text = DX_input_reg.Text;
+        }
+
+        private void CX_check_Click(object sender, RoutedEventArgs e)
+        {
+            if (mem_reg.IsChecked == true)
+                this.Nr_rejestru_result.Text = CX_input_reg.Text;
+        }
+
+        private void Random_register_MouseEnter(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void reg_mem_Click(object sender, RoutedEventArgs e)
+        {
+            Nr_rejestru_result.Clear();
+            Adres_result.Clear();
+            Adres_result.Text = GetRandom();
+            Nr_rejestru_result.Text = GetRandom();
+        }
     }
 }
