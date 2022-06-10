@@ -3,9 +3,14 @@ SYMULATOR WYBRANYCH POLECEŃ PROCESORA 8086
 Wyższa Szkoła Informatyki i Ekonometrii w Krakowie
 
 Informatyka Stosowana
- Honorata Łyczak gr. VIII
 
-Procesor 8086.
+Honorata Łyczak gr. VIII
+
+
+![image](https://user-images.githubusercontent.com/91788712/173147806-dd490ecb-3377-4a45-ab90-b2a89895bf30.png)
+
+
+
 
 Procesor to inaczej CPU – jednostka centralna (Central Processing Unit). Zbudowany z tranzystorów o mikroskopijnej wielkości. Tranzystor działa jak kontakt – posiada dwa wejścia co powoduje, iż jest możliwość tworzenia wartości dwójkowych. Mikroprocesor 8086 został wynaleziony w 1976 przez firmę Intel. Jest to następca 8 bitowego procesora 8080.
  Procesor 8086 opiera się na 16 bitowej architekturze: rejestry, szyna danych, obliczenia.
@@ -126,4 +131,6 @@ MOV bx 20
 XCHG ax,bx
 
 Wynikiem będzie zamian wcześniej przypisanych wartości ax z bx.
+
+
 
