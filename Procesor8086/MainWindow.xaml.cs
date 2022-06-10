@@ -351,8 +351,8 @@ namespace Procesor8086
 
         private void XCHG_Click(object sender, RoutedEventArgs e)
         {
-            var inputA = GetInput(dropdown_move.Text);
-            var inputB = GetInput(dropdown_move2.Text);
+            var inputA = GetInput(dropdown_xchg.Text);
+            var inputB = GetInput(dropdown_xchg2.Text);
 
             swap(inputA, inputB);
         }
