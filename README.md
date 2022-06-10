@@ -105,13 +105,17 @@ Podstawową instrukcją przesyłania danych jest polecenie **MOV.**
 Odpowiada ono za przesłanie danych do rejestru przeznaczenia np. pamięci.
 
 **Przykłady polecenia MOV** :
- MOV AX 100 -\&gt; prześlij do rejestru AX liczbę 100
+ MOV AX 100 -> prześlij do rejestru AX liczbę 100
 
-MOV BX 20 -\&gt; prześlij do rejestru BX liczbę 20
+MOV BX 20 -> prześlij do rejestru BX liczbę 20
 
 Kolejną instrukcją jest polecenie XCHG, PUSH oraz POP.
 
-Poleceni XCHG odpowiada za zamianę
+Polecenie PUSH odpowiada za dodanie na stos.
+
+Polecenie POP odpowiada za pobranie ze stosu.
+
+Polecenie XCHG odpowiada za zamianę.
 
 **Przykład polecenia XCHG:**
 
@@ -123,4 +127,3 @@ XCHG ax,bx
 
 Wynikiem będzie zamian wcześniej przypisanych wartości ax z bx.
 
-Polecenie OFSET służy do pobrania adresu zmiennej.
