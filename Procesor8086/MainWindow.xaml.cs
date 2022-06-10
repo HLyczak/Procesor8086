@@ -44,6 +44,9 @@ namespace Procesor8086
             this.Offset_input.Clear();
             this.Adres_result.Clear();
             this.Nr_rejestru_result.Clear();
+            this.Adres_result_Copy.Clear();
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
 
             this.AX_input_reg.Background = Brushes.White;
             this.BX_input_reg.Background = Brushes.White;
@@ -189,17 +192,17 @@ namespace Procesor8086
                     this.DI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
                     this.AX_input_reg.Text = Nr_rejestru_result.Text;
                 }
-                if (indeksowy.IsChecked == true && Si.IsChecked == true && BX_check.IsChecked == true)
+                if (indeksowy.IsChecked == true && Di.IsChecked == true && BX_check.IsChecked == true)
                 {
                     this.DI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
                     this.BX_input_reg.Text = Nr_rejestru_result.Text;
                 }
-                if (indeksowy.IsChecked == true && Si.IsChecked == true && CX_check.IsChecked == true)
+                if (indeksowy.IsChecked == true && Di.IsChecked == true && CX_check.IsChecked == true)
                 {
                     this.DI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
                     this.CX_input_reg.Text = Nr_rejestru_result.Text;
                 }
-                if (indeksowy.IsChecked == true && Si.IsChecked == true && DX_check.IsChecked == true)
+                if (indeksowy.IsChecked == true && Di.IsChecked == true && DX_check.IsChecked == true)
                 {
                     this.DI_input_default.Text = SubstractHex(Adres_result.Text, Offset_input.Text);
                     this.DX_input_reg.Text = Nr_rejestru_result.Text;
@@ -442,24 +445,47 @@ namespace Procesor8086
         {
             if (mem_reg.IsChecked == true)
                 this.Nr_rejestru_result.Text = AX_input_reg.Text;
+
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
         }
 
         private void BX_check_Click(object sender, RoutedEventArgs e)
         {
             if (mem_reg.IsChecked == true)
                 this.Nr_rejestru_result.Text = BX_input_reg.Text;
+
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
         }
 
         private void DX_check_Click(object sender, RoutedEventArgs e)
         {
             if (mem_reg.IsChecked == true)
                 this.Nr_rejestru_result.Text = DX_input_reg.Text;
+
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
         }
 
         private void CX_check_Click(object sender, RoutedEventArgs e)
         {
             if (mem_reg.IsChecked == true)
                 this.Nr_rejestru_result.Text = CX_input_reg.Text;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
         }
 
         private void Random_register_MouseEnter(object sender, MouseEventArgs e)
@@ -472,6 +498,97 @@ namespace Procesor8086
             Adres_result.Clear();
             Adres_result.Text = GetRandom();
             Nr_rejestru_result.Text = GetRandom();
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
+        }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Adres_result_Copy.Clear();
+            this.Adres_result_Copy.Text = AddHex(Adres_result.Text, "1");
+            Adres_result_Copy.Visibility = Visibility.Visible;
+            Al_text.Visibility = Visibility.Visible;
+            Ah_text.Visibility = Visibility.Visible;
+            ah_result.Visibility = Visibility.Visible;
+            al_result.Visibility = Visibility.Visible;
+            //ah+al
+            ah_result.Text = Nr_rejestru_result.Text.Substring(0, 2);
+            al_result.Text = Nr_rejestru_result.Text.Substring(2);
+        }
+
+        private void mem_reg_Click(object sender, RoutedEventArgs e)
+        {
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
+        }
+
+        private void indeksowy_Click(object sender, RoutedEventArgs e)
+        {
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
+        }
+
+        private void bazowy_Click(object sender, RoutedEventArgs e)
+        {
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
+        }
+
+        private void indeksowo_bazowy_Click(object sender, RoutedEventArgs e)
+        {
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
+        }
+
+        private void Si_Click(object sender, RoutedEventArgs e)
+        {
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
+        }
+
+        private void Di_Click(object sender, RoutedEventArgs e)
+        {
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
+        }
+
+        private void Bp_Click(object sender, RoutedEventArgs e)
+        {
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
+        }
+
+        private void Bx_Click(object sender, RoutedEventArgs e)
+        {
+            Adres_result_Copy.Visibility = Visibility.Hidden;
+            Al_text.Visibility = Visibility.Hidden;
+            Ah_text.Visibility = Visibility.Hidden;
+            al_result.Visibility = Visibility.Hidden;
+            ah_result.Visibility = Visibility.Hidden;
         }
     }
 }
