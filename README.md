@@ -3,9 +3,14 @@ SYMULATOR WYBRANYCH POLECEŃ PROCESORA 8086
 Wyższa Szkoła Informatyki i Ekonometrii w Krakowie
 
 Informatyka Stosowana
- Honorata Łyczak gr. VIII
 
-Procesor 8086.
+Honorata Łyczak gr. VIII
+
+
+![image](https://user-images.githubusercontent.com/91788712/173147806-dd490ecb-3377-4a45-ab90-b2a89895bf30.png)
+
+
+
 
 Procesor to inaczej CPU – jednostka centralna (Central Processing Unit). Zbudowany z tranzystorów o mikroskopijnej wielkości. Tranzystor działa jak kontakt – posiada dwa wejścia co powoduje, iż jest możliwość tworzenia wartości dwójkowych. Mikroprocesor 8086 został wynaleziony w 1976 przez firmę Intel. Jest to następca 8 bitowego procesora 8080.
  Procesor 8086 opiera się na 16 bitowej architekturze: rejestry, szyna danych, obliczenia.
@@ -105,13 +110,17 @@ Podstawową instrukcją przesyłania danych jest polecenie **MOV.**
 Odpowiada ono za przesłanie danych do rejestru przeznaczenia np. pamięci.
 
 **Przykłady polecenia MOV** :
- MOV AX 100 -\&gt; prześlij do rejestru AX liczbę 100
+ MOV AX 100 -> prześlij do rejestru AX liczbę 100
 
-MOV BX 20 -\&gt; prześlij do rejestru BX liczbę 20
+MOV BX 20 -> prześlij do rejestru BX liczbę 20
 
 Kolejną instrukcją jest polecenie XCHG, PUSH oraz POP.
 
-Poleceni XCHG odpowiada za zamianę
+Polecenie PUSH odpowiada za dodanie na stos.
+
+Polecenie POP odpowiada za pobranie ze stosu.
+
+Polecenie XCHG odpowiada za zamianę.
 
 **Przykład polecenia XCHG:**
 
@@ -123,4 +132,5 @@ XCHG ax,bx
 
 Wynikiem będzie zamian wcześniej przypisanych wartości ax z bx.
 
-Polecenie OFSET służy do pobrania adresu zmiennej.
+
+
